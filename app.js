@@ -4,8 +4,7 @@ const express 		= require('express'),
 			app 				= express(),
 			bodyParser  = require('body-parser'),
 			mongoose 		= require('mongoose'),
-			path 				= require('path'),
-			User 				= require('./models/User.model');
+			path 				= require('path');
 
 const port = 3000;
 const db = 'mongodb://localhost/meetup'
