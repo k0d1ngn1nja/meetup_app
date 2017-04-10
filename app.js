@@ -7,12 +7,12 @@ const express 		= require('express'),
 			path 				= require('path');
 
 const port = 3000;
-const db = 'mongodb://localhost/meetup'
-
-let routes = require('./routes/index');
+const db = 'mongodb://localhost/meetupApp';
 
 // connect to mongo database
 mongoose.connect(db);
+
+let routes = require('./routes/index');
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');// setup view engine

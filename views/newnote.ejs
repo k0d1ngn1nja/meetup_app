@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title><%#= title %></title>
+  <title><%= title %></title>
   <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css"/>
   <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css"/>
   <link rel='stylesheet' href='/css/styles.css' />
@@ -51,9 +51,9 @@
           <div class="col-md-4">
             <select id="memberName" name="memberName" class="form-control">
             <option value="selectName">(Select Name)</option>
-              <%#= for user in users %>
-                <option value="<%#= user.username %>" name="memberName"> <%#= user.username %></option>
-              <%# end %>
+              <% for (let user of users) {%>
+                <option value="<%= user.username %>" name="memberName"> <%= user.username %></option>
+              <% } %>
             </select>
           </div>
         </div>
@@ -99,6 +99,6 @@
         </div>
       </fieldset>
     </form>
-    </div><!-- /.container -->
-  </body>
+  </div><!-- /.container -->
+</body>
 </html>

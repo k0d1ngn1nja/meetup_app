@@ -1,9 +1,18 @@
 let mongoose = require('mongoose');
 let Schema = mongoose.Schema;
 
+let memberNameValidator = [
+	(value) => {
+		return (value.length > 0 && value != '(Select Name)');
+	},
+	// custom error text
+	'Select a valid member name.'
+]
+
 let NoteSchema = new Schema({
 	memberName: {
-		type: String
+		type: String,
+		validate: memberNameValidator
 	},
 	project: {
 		type: String,
@@ -28,4 +37,4 @@ let NoteSchema = new Schema({
 	}
 });
 
-model.exports = mongoose.model('Note', NoteSchema);
+module.exports = mongoose.model('Note', NoteSchema);
