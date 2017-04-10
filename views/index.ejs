@@ -2,9 +2,9 @@
 <html>
 <head>
   <title><%##= title %></title>
-  <link rel='stylesheet' href='/css/styles.css' />
   <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css"/>
   <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css"/>
+  <link rel='stylesheet' href='/css/styles.css' />
 </head>
 <body>
   <div class="navbar navbar-inverse navbar-fixed-top">
@@ -55,8 +55,20 @@
         </form>
       </div><!--/col-->
     </div><!--/row-->
+    <br>
+    <div class="row">
+      <div class="col-md-12 column list-group">
+        <%# for note in notes %>
+          <div class="list-group-item">
+            <div>Note from <em><strong> <%#= note.memberName %></strong></em>
+            on: <%#= note.createdOn.toDateString() %> - for project: <strong><%#= note.project %></strong></div>
+            <div><strong>Work yesterday:</strong> <%#=note.workYesterday %></div>
+            <div><strong>Work today:</strong> <%#= note.workToday %></div>
+            <div><strong>Impediment:</strong> <%#= note.impediment %></div>
+          </div>
+        <%# end %>
+      </div>
+    </div>
   </div><!--/container-->
-    
-  
 </body>
 </html>
